@@ -1,33 +1,33 @@
 {
-  "title": "TestUserEvent",
+  "title": "CustomerEvents",
   "x-stoplight": {
-    "id": "kqtvgnwgsjrcg"
+    "id": "t4c6xhkl0obhk"
   },
   "type": "object",
-   "properties": {
+  "properties": {
     "eventId": {
       "type": "string",
       "x-stoplight": {
-        "id": "bbuxdifay8y7q"
+        "id": "oy7ir6byhia4u"
       }
     },
     "objectOperation": {
       "type": "string",
       "x-stoplight": {
-        "id": "mbsrm26jp6s46"
+        "id": "kysdc3kx0k91e"
       }
     },
     "eventDate": {
       "type": "string",
       "x-stoplight": {
-        "id": "6md4diwvlejh4"
+        "id": "sdnwlmr55099y"
       },
       "format": "date-time"
     },
     "data": {
-      "$ref": "./TestUser.json",
+      "$ref": "./Customer.json",
       "x-stoplight": {
-        "id": "gz17ttdf1rcz9"
+        "id": "5xmifeitvlj48"
       }
     }
   }
