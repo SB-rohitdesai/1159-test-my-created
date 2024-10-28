@@ -1,0 +1,34 @@
+{
+  "title": "TestUserEvent",
+  "x-stoplight": {
+    "id": "kqtvgnwgsjrcg"
+  },
+  "type": "object",
+   "properties": {
+    "eventId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "bbuxdifay8y7q"
+      }
+    },
+    "objectOperation": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "mbsrm26jp6s46"
+      }
+    },
+    "eventDate": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "6md4diwvlejh4"
+      },
+      "format": "date-time"
+    },
+    "data": {
+      "$ref": "./TestUser.json",
+      "x-stoplight": {
+        "id": "gz17ttdf1rcz9"
+      }
+    }
+  }
+}

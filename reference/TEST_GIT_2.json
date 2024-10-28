@@ -1,0 +1,220 @@
+{
+  "openapi": "3.0.1",
+  "x-stoplight": {
+    "id": "cgkkgowuqz0dt"
+  },
+  "info": {
+    "title": "TEST_GIT_2",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "summary": "Fetch all data",
+        "tags": [],
+        "responses": {
+          "2XX": {
+            "description": "Success"
+          }
+        },
+        "operationId": "get-user",
+        "x-stoplight": {
+          "id": "vr5qv5johuw5x"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "customerIds",
+            "description": "Comma separated list of customerIds"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit",
+            "description": "Limit"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "offset",
+            "description": "offset"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "plantId",
+            "description": "plantId"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "X-Vcsi-Client-Request-Id",
+            "description": "Optionnal corellation id that you can send to help us retreive your request in case of failure."
+          }
+        ]
+      }
+    },
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "integer"
+          },
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "Id of an existing user."
+        }
+      ],
+      "get": {
+        "summary": "Get User Info by User ID",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "User Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "../models/TestUser.json"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          }
+        },
+        "operationId": "get-users-userId",
+        "description": "Retrieve the information of the user with the matching user ID.",
+        "x-stoplight": {
+          "id": "59qkbr0h4q8dr"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "X-Vcsi-Client-Request-Id",
+            "description": "Optionnal corellation id that you can send to help us retreive your request in case of failure."
+          }
+        ]
+      }
+    },
+    "/users/userEvent": {
+      "get": {
+        "summary": "allows to retrieve user data",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Success data fetch",
+             "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "../models/TestUserEvent.json"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-users-userEvent",
+        "x-stoplight": {
+          "id": "fa32x0qtwu0kw"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "startDate"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "endDate"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": " offset"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "limit"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header",
+            "name": "X-Vcsi-Client-Request-Id",
+            "description": "Optional correlation id that you can send to help us retrieve your request in case of failure."
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Customer"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "schemas": {}
+  },
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ]
+}
